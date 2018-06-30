@@ -5,23 +5,24 @@ import kz.exampleandroid.tom.calculator.abstraction.IValidator;
 import kz.exampleandroid.tom.calculator.abstraction.OperatorBase;
 
 public class SimpleCalculator {
-    IValidator validator;
-    OperatorBase operation;
+    private IValidator validator;
+    private OperatorBase operation;
     private double _buffer;
 
-    public SimpleCalculator() {
-        validator = new Validator();
+
+    public SimpleCalculator(IValidator validator) {
+        this.validator = validator;
     }
 
-
-    public double get_buffer() {
+    public double getBuffer() {
         return _buffer;
     }
 
-
     public void calculate(String string) {
-        operation = validator.isValid(string);
-        if(operation == null)return;
-        _buffer = operation.calculate();
+        while (validator.isValidString(string)) {
+            operation = validator.getOperation(string, _buffer);
+            _buffer = operation.calculate();
+             string = validator.getNextString(string, _buffer);
+        }
     }
 }

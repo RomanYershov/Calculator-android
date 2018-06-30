@@ -5,6 +5,7 @@ public abstract class OperatorBase {
     private double y;
 
 
+
     public OperatorBase(double x, double y){
         this.x = x;
         this.y = y;

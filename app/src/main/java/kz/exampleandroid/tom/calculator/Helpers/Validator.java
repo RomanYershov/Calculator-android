@@ -15,9 +15,7 @@ public class Validator implements IValidator {
     private static final String PATTERN = "^(\\s+)?[\\-\\+]?(\\s+)?\\d+([\\.\\,]\\d+)?(\\s+)?[\\-\\+\\*\\/]" +
             "(\\s+)?[\\-]?(\\s+)?\\d+([\\.\\,]\\d+)?";
 
-    public Validator() {
 
-    }
 
     private String getOperator(String string) {
         Pattern pattern = Pattern.compile("(?<!^)[\\+\\-\\*\\/]");
@@ -33,19 +31,26 @@ public class Validator implements IValidator {
         Matcher result = pattern.matcher(string);
         String res = "";
         while (result.find())
-            res = result.group();
+            res = result.group(0);
         return res;
     }
 
-    private boolean isValidString(String string) {
+    @Override
+    public boolean isValidString(String string) {
         Pattern pattern = Pattern.compile(PATTERN);
         Matcher result = pattern.matcher(string);
         return result.find();
     }
 
     @Override
-    public OperatorBase isValid(String str) {
-        if (!isValidString(str)) return null;
+    public  String getNextString(String str, double buffer){
+        String validString = getValidString(str);
+        String nextString = str.replace(validString, Double.toString(buffer));
+        return nextString;
+    }
+
+    @Override
+    public OperatorBase getOperation(String str, double buffer) {
         OperatorBase operation = null;
         String validString = getValidString(str);
         String operator = getOperator(validString);
@@ -66,7 +71,6 @@ public class Validator implements IValidator {
                 operation = new Division(X, Y);
                 break;
         }
-
         return operation;
     }
 }
