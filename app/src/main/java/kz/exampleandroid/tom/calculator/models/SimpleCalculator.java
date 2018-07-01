@@ -18,6 +18,10 @@ public class SimpleCalculator {
         return _buffer;
     }
 
+    public void setBuffer(double _buffer) {
+        this._buffer = _buffer;
+    }
+
     public void calculate(String string) {
         while (validator.isValidString(string)) {
             operation = validator.getOperation(string, _buffer);

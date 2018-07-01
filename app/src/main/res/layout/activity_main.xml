@@ -9,104 +9,105 @@
     tools:context=".MainActivity"
     >
 
-   <LinearLayout
-       android:layout_marginTop="20dp"
-       android:paddingHorizontal="10dp"
-       android:orientation="vertical"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-      >
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
-       <TextView
-           android:id="@+id/ma_op_tv"
-           android:layout_width="match_parent"
-           android:layout_height="120dp"
-           android:textSize="28sp"
-           android:layout_marginBottom="5dp"
-           android:gravity="center"
-           android:textColor="@android:color/holo_orange_dark"/>
-       <TextView
-           android:id="@+id/ma_result_tv"
-           android:gravity="center"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:textSize="40sp"
-           android:padding="5dp"
-           android:textColor="@android:color/white"/>
+        <TextView
+            android:id="@+id/ma_op_tv"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:textSize="28sp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_orange_dark"/>
+        <TextView
+            android:id="@+id/ma_result_tv"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="40sp"
+            android:padding="5dp"
+            android:textColor="@android:color/white"/>
 
 
-       <GridLayout
-           android:layout_gravity="fill_horizontal"
-           android:paddingHorizontal="40dp"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:layout_marginTop="20dp"
-           android:rowCount="5"
-           android:columnCount="4"
-           android:padding="10dp"
-           >
-           <Button android:text="0"  android:onClick="Operation"
-               android:layout_row="0"
-               android:layout_column="0"/>
-           <Button android:text="1" android:onClick="Operation"
-               android:layout_row="1"
-               android:layout_column="0"/>
-           <Button android:text="2" android:onClick="Operation"
-               android:layout_column="0"
-               android:layout_row="2"/>
-           <Button android:text="3" android:onClick="Operation"
-               android:layout_column="0"
-               android:layout_row="3"/>
-           <Button android:text="4" android:onClick="Operation"
-               android:layout_column="0"
-               android:layout_row="4"/>
-           <Button android:text="5" android:onClick="Operation"
-               android:layout_column="1"
-               android:layout_row="0"/>
-           <Button android:text="6" android:onClick="Operation"
-               android:layout_column="1"
-               android:layout_row="1"/>
-           <Button android:text="7" android:onClick="Operation"
-               android:layout_column="1"
-               android:layout_row="2"/>
-           <Button android:text="8" android:onClick="Operation"
-               android:layout_column="1"
-               android:layout_row="3"/>
-           <Button android:text="9" android:onClick="Operation"
-               android:layout_column="1"
-               android:layout_row="4"/>
-           <Button android:text="." android:onClick="Operation"
-               android:layout_column="2"
-               android:layout_row="0"/>
-           <Button android:text="+" android:onClick="Operation"
-               android:layout_column="2"
-               android:layout_row="1"/>
-           <Button android:text="-" android:onClick="Operation"
-               android:layout_column="2"
-               android:layout_row="2"/>
-           <Button android:text="*" android:onClick="Operation"
-               android:layout_column="2"
-               android:layout_row="3"/>
-           <Button android:text="/" android:onClick="Operation"
-               android:layout_column="2"
-               android:layout_row="4"/>
-           <Button
-               android:id="@+id/ma_delete_btnDel"
-               android:layout_column="3"
-               android:layout_row="0"
-               android:layout_rowSpan="2"
-               android:layout_gravity="fill_vertical"
-               android:text="forward"/>
-           <Button
-               android:id="@+id/ma_clear_btnClear"
-               android:layout_column="3"
-               android:layout_row="2"
-               android:layout_rowSpan="3"
-               android:layout_gravity="fill_vertical"
-               android:text="C"/>
-       </GridLayout>
+        <GridLayout
+            android:layout_gravity="fill_horizontal"
+            android:paddingHorizontal="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:rowCount="5"
+            android:columnCount="4"
+            android:padding="10dp"
+            >
+            <Button android:text="0"  android:onClick="Operation"
+                android:layout_row="0"
+                android:layout_column="0"
+                />
+            <Button android:text="1" android:onClick="Operation"
+                android:layout_row="1"
+                android:layout_column="0"/>
+            <Button android:text="2" android:onClick="Operation"
+                android:layout_column="0"
+                android:layout_row="2"/>
+            <Button android:text="3" android:onClick="Operation"
+                android:layout_column="0"
+                android:layout_row="3"/>
+            <Button android:text="4" android:onClick="Operation"
+                android:layout_column="0"
+                android:layout_row="4"/>
+            <Button android:text="5" android:onClick="Operation"
+                android:layout_column="1"
+                android:layout_row="0"/>
+            <Button android:text="6" android:onClick="Operation"
+                android:layout_column="1"
+                android:layout_row="1"/>
+            <Button android:text="7" android:onClick="Operation"
+                android:layout_column="1"
+                android:layout_row="2"/>
+            <Button android:text="8" android:onClick="Operation"
+                android:layout_column="1"
+                android:layout_row="3"/>
+            <Button android:text="9" android:onClick="Operation"
+                android:layout_column="1"
+                android:layout_row="4"/>
+            <Button android:text="." android:onClick="Operation"
+                android:layout_column="2"
+                android:layout_row="4"/>
+            <Button android:text="+" android:onClick="Operation"
+                android:layout_column="2"
+                android:layout_row="0"/>
+            <Button android:text="-" android:onClick="Operation"
+                android:layout_column="2"
+                android:layout_row="1"/>
+            <Button android:text="*" android:onClick="Operation"
+                android:layout_column="2"
+                android:layout_row="2"/>
+            <Button android:text="/" android:onClick="Operation"
+                android:layout_column="2"
+                android:layout_row="3"/>
+            <Button
+                android:id="@+id/ma_delete_btnDel"
+                android:layout_column="3"
+                android:layout_row="0"
+                android:layout_rowSpan="2"
+                android:layout_gravity="fill_vertical"
+                android:text="Del"/>
+            <Button
+                android:id="@+id/ma_clear_btnClear"
+                android:layout_column="3"
+                android:layout_row="2"
+                android:layout_rowSpan="3"
+                android:layout_gravity="fill_vertical"
+                android:text="C"/>
+        </GridLayout>
 
-   </LinearLayout>
+    </LinearLayout>
 
 
 </FrameLayout>
